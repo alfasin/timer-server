@@ -2,7 +2,7 @@
 
 ## timer-server
 
-Uses Apollo/GraphQL/Nodejs to accept requests to add terminations to a zoom-session and updates them into CockroachDB
+Uses Apollo/GraphQL/Nodejs to accept requests to terminate a zoom-session and sends these notifications into CockroachDB
 
 ## cURL Examples
 
