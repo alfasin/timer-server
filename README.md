@@ -18,15 +18,17 @@ We recommend piping the output into `jq`.
 
 ## Motivation
 
-Per [Cigi Tech Design][1] timer-server accepts graphQL requests from cigi-server and based on their input adds notifications to terminate existing zoom sessions at a specific timestamp.
+Per [Cigi Tech Design](https://gitlab.com/tikal-fuse/fuseday2020/group2/test/-/wikis/Cigi-tech-design) timer-server accepts graphQL requests from cigi-server and based on their input adds notifications to terminate existing zoom sessions at a specific timestamp.
 
 ## Installation
 
-Assuming cockroachDB and the other relevant micro-service are already present. Simply do: `npm install`
+Assuming cockroachDB and the other relevant micro-service are already present. 
+
+Simply do: `npm install`
 
 ## API Reference
 
-Requirements detailed [here][2]
+Requirements detailed [here](https://gitlab.com/tikal-fuse/fuseday2020/group2/test/-/issues/7)
 
 ## Tests
 
@@ -34,8 +36,4 @@ Describe and show how to run the tests with code examples.
 
 ## License
 
-[ISC][3]
-
-[1]:[https://gitlab.com/tikal-fuse/fuseday2020/group2/test/-/wikis/Cigi-tech-design]
-[2]: [https://gitlab.com/tikal-fuse/fuseday2020/group2/test/-/issues/7]
-[3]: [https://en.wikipedia.org/wiki/ISC_license]
+[ISC](https://en.wikipedia.org/wiki/ISC_license)
