@@ -22,17 +22,13 @@ Per [Cigi Tech Design](https://gitlab.com/tikal-fuse/fuseday2020/group2/test/-/w
 
 ## Installation
 
-Assuming cockroachDB and the other relevant micro-service are already present. 
+Assuming cockroachDB and the other relevant micro-services are already present. 
 
 Simply do: `npm install`
 
 ## API Reference
 
 Requirements detailed [here](https://gitlab.com/tikal-fuse/fuseday2020/group2/test/-/issues/7)
-
-## Tests
-
-Describe and show how to run the tests with code examples.
 
 ## License
 
