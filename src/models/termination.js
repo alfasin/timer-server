@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize-cockroachdb');
+const DataTypes = Sequelize.DataTypes;
 
 // Connect to CockroachDB through Sequelize.
 const sequelize = new Sequelize('zoomkiller', 'maxroach', '', {
@@ -8,9 +9,10 @@ const sequelize = new Sequelize('zoomkiller', 'maxroach', '', {
 });
 
 // Define the Termination model for the "terminations" table.
-const Termination = sequelize.define('terminations', {
+exports.Termination = sequelize.define('terminations', {
     id: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
         primaryKey: true
     },
     zoom_id: {
@@ -20,6 +22,8 @@ const Termination = sequelize.define('terminations', {
         type: Sequelize.DATE
     },
 });
+
+exports.Termination.sync({ force: true })
 
 // TODO: REMOVE //////////////////////////////////////////////////////////////
 // Example that creates the "terminations" table + some content.
@@ -48,7 +52,3 @@ const Termination = sequelize.define('terminations', {
 // cockroach sql --insecure -e 'select * from terminations' --database=zoomkiller
 //
 // REMOVE UNTIL THIS POINT /////////////////////////////////////////////////
-
-exports = {
-    Termination,
-};
