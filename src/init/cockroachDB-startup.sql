@@ -1,0 +1,3 @@
+CREATE USER IF NOT EXISTS maxroach;
+CREATE DATABASE zoomkiller;
+GRANT ALL ON DATABASE zoomkiller TO maxroach;
