@@ -1,3 +1,5 @@
+![alt text](https://www.monash.vic.gov.au/files/assets/public/about-us/news/media-releases/cigarette-3112660_1920.jpg)
+
 ## timer-server
 
 Uses Apollo/GraphQL/Nodejs to accept requests to add terminations to a zoom-session and updates them into CockroachDB
