@@ -1,5 +1,6 @@
 const { ApolloServer } = require('apollo-server');
 const { typeDefs } = require('./schema');
+const { resolvers } = require('./resolvers');
 const { Termination } = require('./models/termination');
 
 const terminations = [
@@ -13,22 +14,6 @@ const terminations = [
   },
 ];
 
-// Resolvers define the technique for fetching the types defined in the
-// schema. This resolver retrieves terminations from the "terminations" array above.
-const { GraphQLScalarType } = require('graphql');
-const { Kind } = require('graphql/language');
-
-const resolvers = {
-  Query: {
-    terminations: () => terminations,
-  },
-  Mutation: {
-    addTermination: (t) => {
-      terminations.push(t);
-      return t;
-    },
-  }
-};
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
 const server = new ApolloServer({ typeDefs, resolvers });

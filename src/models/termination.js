@@ -23,25 +23,24 @@ const Termination = sequelize.define('terminations', {
 
 // TODO: REMOVE //////////////////////////////////////////////////////////////
 // Example that creates the "terminations" table + some content.
-Termination.sync({ force: true }).then(function () {
-    // Insert two rows into the "terminations" table.
-    return Termination.bulkCreate([
-        { id: 1, zoom_id: '1000', terminate_time: 'Fri, 04 Sep 2020 15:30:58 GMT' },
-        { id: 2, zoom_id: '250', terminate_time: 'Fri, 04 Sep 2020 15:30:58 GMT' }
-    ]);
-}).then(function () {
-    // Retrieve terminations.
-    return Termination.findAll();
-}).then(function (terminations) {
-    // Print out the balances.
-    terminations.forEach(function (termination) {
-        console.log('[' + termination.id + ', ' + termination.zoom_id + ', ' + termination.terminate_time + ']');
-    });
-    process.exit(0);
-}).catch(function (err) {
-    console.error('error: ' + err.message);
-    process.exit(1);
-});
+// Termination.sync({ force: true }).then(function () {
+//     // Insert two rows into the "terminations" table.
+//     return Termination.bulkCreate([
+//         { id: 1, zoom_id: '1000', terminate_time: 'Fri, 04 Sep 2020 15:30:58 GMT' },
+//         { id: 2, zoom_id: '250', terminate_time: 'Fri, 04 Sep 2020 15:30:58 GMT' }
+//     ]);
+// }).then(function () {
+//     // Retrieve terminations.
+//     return Termination.findAll();
+// }).then(function (terminations) {
+//     // Print out the balances.
+//     terminations.forEach(function (termination) {
+//         console.log('termination: [' + termination.id + ', ' + termination.zoom_id + ', ' + termination.terminate_time + ']');
+//     });
+// }).catch(function (err) {
+//     console.error('error: ' + err.message);
+//     process.exit(1);
+// });
 
 // now we can run from commandline:
 // cockroach sql --insecure -e 'SHOW TABLES' --database=zoomkiller
@@ -51,5 +50,5 @@ Termination.sync({ force: true }).then(function () {
 // REMOVE UNTIL THIS POINT /////////////////////////////////////////////////
 
 exports = {
-    Termination
+    Termination,
 };
