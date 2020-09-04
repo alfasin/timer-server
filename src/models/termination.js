@@ -23,6 +23,14 @@ exports.Termination = sequelize.define('terminations', {
     },
 });
 
+exports.terminationToJSON = function (termination) {
+    return {
+        id: termination.id,
+        zoomId: termination.zoom_id,
+        terminateTime: termination.terminate_time
+    };
+};
+
 exports.Termination.sync({ force: true })
 
 // TODO: REMOVE //////////////////////////////////////////////////////////////

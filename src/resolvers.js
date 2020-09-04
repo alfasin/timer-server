@@ -1,46 +1,36 @@
 const moment = require('moment');
 
-const { Termination } = require('./models/termination');
-
-const terminations = [
-    {
-        zoomId: '123abc',
-        ttl: 8,
-    },
-    {
-        zoomId: 'vgh-76ft',
-        ttl: 8,
-    },
-];
+const { Termination, terminationToJSON } = require('./models/termination');
 
 // Resolvers define the technique for fetching the types defined in the
 // schema. This resolver retrieves terminations from the "terminations" array above.
 exports.resolvers = {
     Query: {
-        terminations: () => {
-            return terminations;
+        terminations: async () => {
+            const terminations = await Termination.findAll();
+            const result = terminations.map(terminationToJSON);
+            console.log('terminations', terminations);
+            console.log('result', result);
+            return result;
         },
     },
     Mutation: {
-        // receiving a termination should include zoomId and ttl in minutes
-        addTermination: async (zoomId, timeLeftMinutes) => {
-            console.log('addTermination:', zoomId, timeLeftMinutes);
+        // receiving a termination should include zoomId and timeLeftMinutes
+        addTermination: async (_, { zoomId, timeLeftMinutes }) => {
+            // console.log('addTermination:', zoomId, timeLeftMinutes);
             const ts = moment().add(timeLeftMinutes, 'minutes').toDate();            
             const t = await Termination.create(
                 { zoom_id: zoomId, terminate_time: ts },
             );
-            const termination = {
-                zoomId,
-                ttl: timeLeftMinutes,
-            };
-            terminations.push(termination);
-            
+            const result = terminationToJSON(t);
+            console.log('returned t:', result);
+            console.log('about to return termination: ', result);
             return {
                 success: !!t,
                 message: !!t
                     ? 'Termination saved successfully'
                     : `Failed to save termination: [${zoomId}, ${timeLeftMinutes}]`,
-                termination,
+                termination: result,
             };
         },
     },

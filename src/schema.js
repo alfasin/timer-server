@@ -4,8 +4,9 @@ const { gql } = require('apollo-server');
 // your data.
 exports.typeDefs = gql`
   type Termination {
-    zoomId: String
-    ttl: Int
+    id: String
+    zoomId: String!
+    terminateTime: String!
   }
 
   type Query {
