@@ -1,7 +1,7 @@
 {
   "name": "timer-server",
   "version": "1.0.0",
-  "description": "Uses GraphQL, accepts requests to add terminations to a zoom session and updates them into CockroachDB",
+  "description": "Uses Apollo/GraphQL, accepts requests to add terminations to a zoom session and updates them into CockroachDB",
   "main": "index.js",
   "scripts": {
     "test": "jest",
