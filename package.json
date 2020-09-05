@@ -4,7 +4,7 @@
   "description": "Uses Apollo/GraphQL, accepts requests to add terminations to a zoom session and updates them into CockroachDB",
   "main": "src/index.js",
   "scripts": {
-    "test": "NODE_ENV=test jest --detectOpenHandles --config=jest.config.js",
+    "test": "NODE_ENV=test jest --config=jest.config.js",
     "start": "export $(cat .env | xargs) && nodemon src/index.js",
     "start:ci": "export $(cat .env | xargs) && node src/index.js"
   },
