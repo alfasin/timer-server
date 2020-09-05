@@ -103,7 +103,7 @@ Simply do: `npm install`
 
 ## Setup
 
-The following env variables may be setup:
+The following `env` variables may be configured either directly or via `vault` or a similar tool in Kubernetes:
 
 ### Server setup
 * `SERVER_PORT` - on which port timer-server should run, defaults to 4000
