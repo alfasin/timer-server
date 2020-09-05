@@ -14,21 +14,14 @@ exports.resolvers = {
     },
     Mutation: {
         // receiving a termination should include zoomId and timeLeftMinutes
-        addTermination: async (_, { zoomId, timeLeftMinutes }/*, ctx, info*/) => {
-            // console.log('addTermination: ctx', ctx, '\n\ninfo:', info);
+        addTermination: async (_, { zoomId, timeLeftMinutes }) => {
             const ts = moment().add(timeLeftMinutes, 'minutes').toDate();            
             const t = await Termination.create(
                 { zoom_id: zoomId, terminate_time: ts },
             );
-            const result = terminationToJSON(t);
-            console.log('about to return termination: ', t.toJSON());
-            return {
-                success: !!t,
-                message: !!t
-                    ? 'Termination saved successfully'
-                    : `Failed to save termination: [${zoomId}, ${timeLeftMinutes}]`,
-                created: result,
-            };
+            const termination = terminationToJSON(t);
+            // console.log('about to return termination: ', t.toJSON());
+            return termination;
         },
     },
 };

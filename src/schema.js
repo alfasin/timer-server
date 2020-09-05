@@ -16,17 +16,4 @@ exports.typeDefs = gql`
   type Mutation {
     addTermination(zoomId: String!, timeLeftMinutes: Int!): Termination
   }
-
-  interface MutationResponse {
-    code: String!
-    success: Boolean!
-    message: String!
-  }
-
-  type UpdateTerminationMutationResponse implements MutationResponse {
-    code: String!
-    success: Boolean!
-    message: String!
-    created: Termination!
-  }
 `;
