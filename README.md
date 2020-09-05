@@ -56,18 +56,42 @@ curl 'http://localhost:4000/' -H 'Accept-Encoding: gzip, deflate, br' -H 'Conten
 
 We recommend piping the output into `jq`.
 
-### Using the playground
+### Using the Playground
 
 When running the server locally, we can access http://localhost:4000/ and run graphQL queries directly in the playground instead of using cURL.
 
 Examples:
 
+#### Create A Session Terminations
+```
+mutation CreateTermination {
+  addTermination(zoomId: "987653245345", timeLeftMinutes: 10) {
+    id
+    zoomId
+    terminateTime
+  }  
+}
+```
 ![create a termination](./assets/playground_create.png)
 
+#### Get All Existing Session Terminations
+```
+query GetTerminations {
+  terminations {
+    id
+    zoomId
+    terminateTime
+  }
+}
+```
 ![get existing terminations](./assets/playground_get.png)
 
 
 ## Motivation
+
+Cigi is a Tikal fuseday project that was created on Sep 2020 in order to provide a slack chatbot that allows you to open a zoom-session for a few minutes inviting other channel members to join you for a ciggarette. 
+
+Timer-server is one of cigi's micro-services and its roll is to get requests for terminations of zoom-sessions and save them on CockroachDB.
 
 Per [Cigi Tech Design](https://gitlab.com/tikal-fuse/fuseday2020/group2/test/-/wikis/Cigi-tech-design) timer-server accepts graphQL requests from cigi-server and based on their input adds notifications to terminate existing zoom sessions at a specific timestamp.
 
