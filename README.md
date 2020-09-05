@@ -62,7 +62,7 @@ When running the server locally, we can access http://localhost:4000/ and run gr
 
 Examples:
 
-#### Create A Session Terminations
+#### Create A Session Termination
 ```
 mutation CreateTermination {
   addTermination(zoomId: "987653245345", timeLeftMinutes: 10) {
@@ -74,7 +74,7 @@ mutation CreateTermination {
 ```
 ![create a termination](./assets/playground_create.png)
 
-#### Get All Existing Session Terminations
+#### Get All Existing Terminations
 ```
 query GetTerminations {
   terminations {
