@@ -5,8 +5,8 @@ const { gql } = require('apollo-server');
 exports.typeDefs = gql`
   type Termination {
     id: String
-    zoomId: String!
-    terminateTime: String!
+    zoomId: String
+    terminateTime: String
   }
 
   type Query {
@@ -14,7 +14,7 @@ exports.typeDefs = gql`
   }
 
   type Mutation {
-    addTermination(zoomId: String, timeLeftMinutes: Int): Termination
+    addTermination(zoomId: String!, timeLeftMinutes: Int!): Termination
   }
 
   interface MutationResponse {
@@ -27,6 +27,6 @@ exports.typeDefs = gql`
     code: String!
     success: Boolean!
     message: String!
-    termination: Termination
+    created: Termination
   }
 `;
