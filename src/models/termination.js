@@ -1,10 +1,17 @@
 const Sequelize = require('sequelize-cockroachdb');
 const DataTypes = Sequelize.DataTypes;
 
+const db = process.env.DB_NAME || 'zoomkiller';
+const user = process.env.DB_USER || 'maxroach';
+const pwd = process.env.DB_PWD || '';
+const host = process.env.DB_HOST || 'localhost';
+const port = process.env.DB_PORT || '26257';
+
 // Connect to CockroachDB through Sequelize.
-const sequelize = new Sequelize('zoomkiller', 'maxroach', '', {
+const sequelize = new Sequelize(db, user, pwd, {
     dialect: 'postgres',
-    port: 26257,
+    host,
+    port,
     logging: false
 });
 
