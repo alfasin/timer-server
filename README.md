@@ -101,6 +101,20 @@ Assuming cockroachDB and the other relevant micro-services are already present.
 
 Simply do: `npm install`
 
+## Setup
+
+The following env variables may be setup:
+
+### Server setup
+* `SERVER_PORT` - on which port timer-server should run, defaults to 4000
+
+### CockroachDB setup
+* `DB_HOST` - defaults to `localhost`
+* `DB_NAME` - defaults to `zoomkiller`
+* `DB_PORT` - defaults to `26257`
+* `DB_USER` - defaults to `maxroach`
+* `DB_PWD` - defaults to `''` (empty string)
+
 ## Running
 
 `npm start`
