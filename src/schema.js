@@ -27,6 +27,6 @@ exports.typeDefs = gql`
     code: String!
     success: Boolean!
     message: String!
-    created: Termination
+    created: Termination!
   }
 `;

@@ -21,13 +21,13 @@ exports.resolvers = {
                 { zoom_id: zoomId, terminate_time: ts },
             );
             const result = terminationToJSON(t);
-            // console.log('about to return termination: ', result);
+            console.log('about to return termination: ', t.toJSON());
             return {
                 success: !!t,
                 message: !!t
                     ? 'Termination saved successfully'
                     : `Failed to save termination: [${zoomId}, ${timeLeftMinutes}]`,
-                    created: result,
+                created: result,
             };
         },
     },
