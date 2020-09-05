@@ -2,8 +2,6 @@ const { ApolloServer } = require('apollo-server');
 const { typeDefs } = require('./schema');
 const { resolvers } = require('./resolvers');
 
-// The ApolloServer constructor requires two parameters: your schema
-// definition and your set of resolvers.
 const server = new ApolloServer({ 
   typeDefs, 
   resolvers,
@@ -11,8 +9,8 @@ const server = new ApolloServer({
   introspection: true,
 });
 
-// The `listen` method launches a web server.
-server.listen({ port: process.env.PORT || 4000 })
+const port = process.env.PORT || 4000;
+server.listen({ port })
   .then(({ url }) => {
     console.log(`🚀  Server ready at ${url}`);
   });

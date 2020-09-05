@@ -2,8 +2,6 @@ const moment = require('moment');
 
 const { Termination, terminationToJSON } = require('./models/termination');
 
-// Resolvers define the technique for fetching the types defined in the
-// schema. This resolver retrieves terminations from the "terminations" array above.
 exports.resolvers = {
     Query: {
         terminations: async () => {
