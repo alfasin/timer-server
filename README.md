@@ -129,4 +129,4 @@ Requirements detailed [here](https://gitlab.com/tikal-fuse/fuseday2020/group2/te
 
 ## License
 
-[ISC](https://en.wikipedia.org/wiki/ISC_license)
+[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
