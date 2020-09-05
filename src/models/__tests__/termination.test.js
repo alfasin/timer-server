@@ -2,7 +2,7 @@ const { terminationToJSON } = require('../termination');
 
 describe('Test Termination', () => {
 
-    it('Test that terminationToJSON parses a record correctly', () => {
+    it('Test that terminationToJSON parses a record correctly', async () => {
         const record = {
             id: '0adfc785-afb5-4218-ac6e-32441a4577e4',
             zoom_id: '987653245345',
@@ -13,4 +13,8 @@ describe('Test Termination', () => {
         expect(parsed.zoomId).toEqual(record.zoom_id);
         expect(new Date(parsed.terminateTime)).toEqual(record.terminate_time);
     });
+
+    afterAll(async () => {           
+        done();
+    })
 });
