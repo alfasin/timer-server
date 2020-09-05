@@ -1,4 +1,4 @@
-![terminate zoom session](./resources/cigi-timer.jpeg)
+![terminate zoom session](./assets/cigi-timer.jpeg)
 
 ## timer-server
 
@@ -62,9 +62,9 @@ When running the server locally, we can access http://localhost:4000/ and run gr
 
 Examples:
 
-![create a termination](./resources/playground_create.png)
+![create a termination](./assets/playground_create.png)
 
-![get existing terminations](./resources/playground_get.png)
+![get existing terminations](./assets/playground_get.png)
 
 
 ## Motivation
