@@ -119,6 +119,10 @@ The following `env` variables may be configured either directly or via `vault` o
 
 `npm start`
 
+## Run tests
+
+`npm test`
+
 ## API Reference
 
 Requirements detailed [here](https://gitlab.com/tikal-fuse/fuseday2020/group2/test/-/issues/7)
