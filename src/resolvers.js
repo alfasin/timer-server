@@ -31,10 +31,4 @@ exports.resolvers = {
             };
         },
     },
-    MutationResponse: {
-        __resolveType(mutationResponse, context, info) {
-            console.log('mutationResponse:', mutationResponse)
-            return null;
-        },
-    },
 };
