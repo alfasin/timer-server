@@ -38,7 +38,7 @@ curl -i 'http://localhost:4000/' -H 'Accept-Encoding: gzip, deflate, br' -H 'Con
 
 ### Create a termination
 ```
-curl -i 'http://localhost:4000/' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: http://localhost:4000' --data-binary '{"query":"mutation CreateTermination {\n  addTermination(zoomId: \"987653245345\", timeLeftMinutes: 10) {\n    id\n    zoomId\n    terminateTime\n  }  \n}"}' --compressed
+curl -i 'http://localhost:4000/' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: http://localhost:4000' --data-binary '{"query":"mutation CreateTermination {\n  addTermination(zoomId: \"0d6ef08f-98e0-4e2f-8dc0-8439bc7963f3\", timeLeftMinutes: 10) {\n    id\n    zoomId\n    terminateTime\n  }  \n}"}' --compressed
 ```
 
 *Example output*
@@ -47,7 +47,7 @@ curl -i 'http://localhost:4000/' -H 'Accept-Encoding: gzip, deflate, br' -H 'Con
   "data": {
     "addTermination": {
       "id": "f8545885-d68c-44ed-8909-5368b46c3352",
-      "zoomId": "987653245345",
+      "zoomId": "0d6ef08f-98e0-4e2f-8dc0-8439bc7963f3",
       "terminateTime": "2020-09-05T00:56:08.049Z"
     }
   }
