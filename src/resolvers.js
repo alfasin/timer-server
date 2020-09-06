@@ -13,7 +13,8 @@ exports.resolvers = {
     Mutation: {
         // receiving a termination should include zoomId and timeLeftMinutes
         addTermination: async (_, { zoomId, timeLeftMinutes }) => {
-            const ts = moment().add(timeLeftMinutes, 'minutes').toDate();            
+            // set 8 minutes as default
+            const ts = moment().add(timeLeftMinutes || 8, 'minutes').toDate();            
             const t = await Termination.create(
                 { zoom_id: zoomId, terminate_time: ts },
             );
