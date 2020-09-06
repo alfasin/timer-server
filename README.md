@@ -53,7 +53,8 @@ curl -i 'http://localhost:4000/' \
 -H 'Connection: keep-alive' \
 -H 'DNT: 1' \
 -H 'Origin: http://localhost:4000' \
---data-binary '{"query":"mutation CreateTermination {\n  addTermination(zoomId: \"0d6ef08f-98e0-4e2f-8dc0-8439bc7963f3\", timeLeftMinutes: 10) {\n    id\n    zoomId\n    terminateTime\n  }  \n}"}' --compressed
+--data-binary '{"query":"mutation CreateTermination {\n  addTermination(zoomId: \"0d6ef08f-98e0-4e2f-8dc0-8439bc7963f3\", timeLeftMinutes: 10) {\n    id\n    zoomId\n    terminateTime\n  }  \n}"}' \
+--compressed
 ```
 
 *Example output*
