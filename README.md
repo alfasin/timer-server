@@ -131,7 +131,7 @@ The following `env` variables may be configured either directly or via `vault` o
 * `DB_USER` - defaults to `maxroach`
 * `DB_PWD` - defaults to `''` (empty string)
 
-## Running
+## Running The Server
 
 `npm start`
 
