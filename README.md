@@ -8,7 +8,7 @@ Uses [Apollo](https://www.apollographql.com/)/[GraphQL](https://graphql.org/)/[N
 
 ### Get all existing terminations
 ```
-curl -i 'http://localhost:4000/' \
+curl 'http://localhost:4000/' \
 -H 'Accept-Encoding: gzip, deflate, br' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
@@ -46,7 +46,7 @@ curl -i 'http://localhost:4000/' \
 
 ### Create a termination
 ```
-curl -i 'http://localhost:4000/' \
+curl 'http://localhost:4000/' \
 -H 'Accept-Encoding: gzip, deflate, br' \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/json' \
